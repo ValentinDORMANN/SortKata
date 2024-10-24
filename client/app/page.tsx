@@ -12,7 +12,7 @@ import Slider from './components/atoms/sliders/Slider';
 export default function Home() {
   const [list, setList] = useState<number[]>([0]);
   const [sortAnalytics, setSortAnalytics] = useState<SortAnalytics[]>([]);
-  const [itemCount, setItemCount] = useState<number>(1);
+  const [itemCount, setItemCount] = useState<number>(10000);
 
   useEffect(() => {
     const fetchAllSortAnalytics = async () => {
@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Slider min={10} max={9999} step={1} defaultValue={itemCount} onChange={handleSliderChange} />
+        <Slider min={100} max={30000} step={100} defaultValue={itemCount} onChange={handleSliderChange} />
         <LoadingButton
           message='Mettre à jour la liste'
           onClick={() => generateNewList(itemCount)}
