@@ -86,7 +86,7 @@ export class TimeSpan {
   public static fromTime(hours: number, minutes: number, seconds: number): TimeSpan;
   public static fromTime(days: number, hours: number, minutes: number, seconds: number, milliseconds: number): TimeSpan;
   public static fromTime(daysOrHours: number, hoursOrMinutes: number, minutesOrSeconds: number, seconds?: number, milliseconds?: number): TimeSpan {
-    if (milliseconds != undefined) {
+    if (seconds != undefined && milliseconds != undefined) {
       return this.fromTimeStartingFromDays(daysOrHours, hoursOrMinutes, minutesOrSeconds, seconds, milliseconds);
     } else {
       return this.fromTimeStartingFromHours(daysOrHours, hoursOrMinutes, minutesOrSeconds);

@@ -7,7 +7,7 @@ export abstract class Toolbox {
    * @param {string} str - The input string to convert.
    * @returns {string} - The string converted to title case.
    */
-  public static toTitleCase(str: string | null | undefined): string {
+  public static toTitleCase(str: string): string {
     return str.replace(/\w\S*/g, (txt: string) => {
       return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase();
     });
