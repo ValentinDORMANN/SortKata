@@ -14,6 +14,15 @@ namespace SortKata.Domain.Services {
             this._sortStrategy = new QuickSortStrategy<T>();
             this._sortAnalyticsBuilder = new SortAnalyticsBuilder();
         }
+        public SortService(
+            SortStrategyFactory<T> sortStrategyFactory,
+            ISortStrategy<T> sortStrategy,
+            SortAnalyticsBuilder sortAnalyticsBuilder
+        ) {
+            this._sortStrategyFactory = sortStrategyFactory;
+            this._sortStrategy = sortStrategy;
+            this._sortAnalyticsBuilder = sortAnalyticsBuilder;
+        }
 
         private void SetSortStrategy(ESortType sortType) {
             this._sortStrategy = this._sortStrategyFactory.GetSortStrategy(sortType);

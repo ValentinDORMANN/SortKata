@@ -22,9 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Builders\" />
     <Folder Include="Domain\Models\" />
-    <Folder Include="Domain\Services\" />
   </ItemGroup>
 
   <ItemGroup>
